@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -7,8 +6,28 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
+/**
+ You are given a two-digit integer n. Return the sum of its digits.
 
+ Example
 
+ For n = 29, the output should be
+ addTwoDigits(n) = 11.
+ */
+
+int addTwoDigits(int n) {
+int sum = 0;
+    List<Integer> digits = new ArrayList<>();
+while (n>0){
+    digits.add(n%10);
+    n = n/10;
+}
+for (int i =0; i < digits.size(); i++){
+    sum = sum + digits.get(i);
+}
+
+    return sum;
+}
     /**
      * Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100,
      * the second - from the year 101 up to and including the year 200, etc.
@@ -62,29 +81,28 @@ public class Main {
      * 7 and 3 produce the largest product.
      */
     int adjacentElementsProduct(int[] inputArray) {
-        int max = inputArray[0]*inputArray[1];
-        for(int i = 2;i < inputArray.length;i++)
-            if(max < inputArray[i-1]*inputArray[i])
-                max = inputArray[i-1]*inputArray[i];
+        int max = inputArray[0] * inputArray[1];
+        for (int i = 2; i < inputArray.length; i++)
+            if (max < inputArray[i - 1] * inputArray[i])
+                max = inputArray[i - 1] * inputArray[i];
         return max;
     }
 
     /**
-     Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
-      A 1-interesting polygon is just a square with a side of length 1.
-     n-interesting polygon is obtained by taking the n - 1-interesting polygon
-     and appending 1-interesting polygons to its rim, side by side.
-     You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
-       */
+     * Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
+     * A 1-interesting polygon is just a square with a side of length 1.
+     * n-interesting polygon is obtained by taking the n - 1-interesting polygon
+     * and appending 1-interesting polygons to its rim, side by side.
+     * You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
+     */
 
     int shapeArea(int n) {
         int area;
 
-        if (n>1){
-            return area = ((4*(n-1))+(shapeArea(n-1)));
-        }
-        else
-            return area =1;
+        if (n > 1) {
+            return area = ((4 * (n - 1)) + (shapeArea(n - 1)));
+        } else
+            return area = 1;
     }
 
 
