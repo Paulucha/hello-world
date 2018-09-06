@@ -58,4 +58,42 @@ public class DataBase {
 //    SELECT id, (scholarship/12) as scholarship FROM scholarships ;
 //    END
 
+    /**
+     You've been promoted and assigned to a new project. The problem is, you don't know who you are working with and your predecessor has vanished without a trace! Luckily, each project in your company keeps its own activity database, which you are going to use to find out the names of your new colleagues.
+
+     Information about the project's activity is stored in table projectLog, which has the following structure:
+
+     id: unique action id;
+     name: the name of the person who performed the action;
+     description: the description of the action;
+     timestamp: the timestamp of the action.
+     You only have access to the project's most recent history, but this should be enough for you. You've decided that finding everyone who interacted with the project in this period is the best way to start.
+
+     Given the table projectLog, build a new results table with a single name column that contains the names of the project's contributors sorted in ascending order.
+
+     */
+//    CREATE PROCEDURE projectsTeam()
+//    BEGIN
+//    SELECT DISTINCT name FROM projectLog ORDER BY name ASC;
+//    END
+/**
+ The application you've been working on for the past year is a huge success! It already has a large and active user community. You know the ID number, username, and email of each user. Each user also has a specific role that shows their position in the community. Information about the users is stored in the database as a table users, which has the following structure:
+
+ id: the unique user ID;
+ username: the username of the user;
+ role the user's role;
+ email: the user's email.
+ You want to send users automatic notifications to let them know about the most recent updates. However, not all users should get these notifications: Administrators don't need notifications since they know about the updates already, and premium users don't need them since they get personalized weekly updates.
+
+ Given the users table, your task is to return the emails of all the users who should get notifications, i.e. those whose role is not equal to "admin" or "premium". Note that roles are case insensitive, so users with roles of "Admin", "pReMiUm", etc. should also be excluded.
+
+ The resulting table should contain a single email column and be sorted by emails in ascending order.
+ */
+//    CREATE PROCEDURE automaticNotifications()
+//    SELECT email
+//    FROM users
+//    WHERE LOWER(role) not in ("admin", "premium")
+//
+//        ORDER BY email;
+
 }
