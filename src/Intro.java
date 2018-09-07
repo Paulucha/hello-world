@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Intro {
 
 
 //INTRO
+
     /**
      * Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100,
      * the second - from the year 101 up to and including the year 200, etc.
@@ -79,5 +84,22 @@ public class Intro {
             return area = 1;
     }
 
+    /**
+     * Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.
+     */
 
+    static int makeArrayConsecutive2(int[] statues) {
+
+        ArrayList<Integer> arrayStatues = new ArrayList<>();
+        for (int i = 0; i < statues.length; i++) {
+            arrayStatues.add(statues[i]);
+        }
+        Collections.sort(arrayStatues);
+int first = arrayStatues.get(0);
+int length= arrayStatues.size();
+int last = arrayStatues.get(length-1);
+return last - first +1 - arrayStatues.size();
+
+
+}
 }
