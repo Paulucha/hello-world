@@ -103,36 +103,54 @@ public class Intro {
     }
 
     /**
-     Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
-
-     Example
-
-     For sequence = [1, 3, 2, 1], the output should be
-     almostIncreasingSequence(sequence) = false.
-
-     There is no one element in this array that can be removed in order to get a strictly increasing sequence.
-
-     For sequence = [1, 3, 2], the output should be
-     almostIncreasingSequence(sequence) = true.
-
-     You can remove 3 from the array to get the strictly increasing sequence [1, 2]. Alternately, you can remove 2 to get the strictly increasing sequence [1, 3].
+     * Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+     * <p>
+     * Example
+     * <p>
+     * For sequence = [1, 3, 2, 1], the output should be
+     * almostIncreasingSequence(sequence) = false.
+     * <p>
+     * There is no one element in this array that can be removed in order to get a strictly increasing sequence.
+     * <p>
+     * For sequence = [1, 3, 2], the output should be
+     * almostIncreasingSequence(sequence) = true.
+     * <p>
+     * You can remove 3 from the array to get the strictly increasing sequence [1, 2]. Alternately, you can remove 2 to get the strictly increasing sequence [1, 3].
      */
 
-   static boolean almostIncreasingSequence(int[] sequence) {
+    static boolean almostIncreasingSequence(int[] sequence) {
         int count = 0;
         int max = 0;
         for (int i = 1; i < sequence.length; i++) {
-            if (sequence[i-1] >= sequence[i]) {
+            if (sequence[i - 1] >= sequence[i]) {
                 count = count + 1;
                 max = i;
             }
         }
         if (count > 1) return false;
-        if (count==0)return true;
-        if (max==sequence.length-1 || max ==1) return true;
-       if (sequence[max-1] < sequence[max+1]) return true;
-       if (sequence[max-2] < sequence[max]) return true;
+        if (count == 0) return true;
+        if (max == sequence.length - 1 || max == 1) return true;
+        if (sequence[max - 1] < sequence[max + 1]) return true;
+        if (sequence[max - 2] < sequence[max]) return true;
         else return false;
+    }
+
+    /**
+     * After they became famous, the CodeBots all decided to move to a new building and live together. The building is represented by a rectangular matrix of rooms. Each cell in the matrix contains an integer that represents the price of the room. Some rooms are free (their cost is 0), but that's probably because they are haunted, so all the bots are afraid of them. That is why any room that is free or is located anywhere below a free room in the same column is not considered suitable for the bots to live in.
+     * <p>
+     * Help the bots calculate the total price of all the rooms that are suitable for them.
+     */
+
+    int matrixElementsSum(int[][] matrix) {
+        int sum = 0;
+        for (int i = 0; i < matrix[0].length; i++)
+            for (int j = 0; j < matrix.length; j++) {
+                if ((matrix[j][i] == 0)) {
+                    break;
+                } else sum = sum + matrix[j][i];
+
+            }
+        return sum;
     }
 
 }
