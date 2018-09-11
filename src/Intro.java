@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Intro {
@@ -95,11 +94,45 @@ public class Intro {
             arrayStatues.add(statues[i]);
         }
         Collections.sort(arrayStatues);
-int first = arrayStatues.get(0);
-int length= arrayStatues.size();
-int last = arrayStatues.get(length-1);
-return last - first +1 - arrayStatues.size();
+        int first = arrayStatues.get(0);
+        int length = arrayStatues.size();
+        int last = arrayStatues.get(length - 1);
+        return last - first + 1 - arrayStatues.size();
 
 
-}
+    }
+
+    /**
+     Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+
+     Example
+
+     For sequence = [1, 3, 2, 1], the output should be
+     almostIncreasingSequence(sequence) = false.
+
+     There is no one element in this array that can be removed in order to get a strictly increasing sequence.
+
+     For sequence = [1, 3, 2], the output should be
+     almostIncreasingSequence(sequence) = true.
+
+     You can remove 3 from the array to get the strictly increasing sequence [1, 2]. Alternately, you can remove 2 to get the strictly increasing sequence [1, 3].
+     */
+
+   static boolean almostIncreasingSequence(int[] sequence) {
+        int count = 0;
+        int max = 0;
+        for (int i = 1; i < sequence.length; i++) {
+            if (sequence[i-1] >= sequence[i]) {
+                count = count + 1;
+                max = i;
+            }
+        }
+        if (count > 1) return false;
+        if (count==0)return true;
+        if (max==sequence.length-1 || max ==1) return true;
+       if (sequence[max-1] < sequence[max+1]) return true;
+       if (sequence[max-2] < sequence[max]) return true;
+        else return false;
+    }
+
 }
