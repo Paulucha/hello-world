@@ -85,4 +85,25 @@ public class TheCore {
         return people;
     }
 
+    /**
+     * Given a divisor and a bound, find the largest integer N such that:
+     * <p>
+     * N is divisible by divisor.
+     * N is less than or equal to bound.
+     * N is greater than 0.
+     * It is guaranteed that such a number exists.
+     */
+
+    int maxMultiple(int divisor, int bound) {
+        int n = 0;
+        for (int i = 2; i <= bound; i++) {
+            if (divisor * i <= bound) {
+                n = i;
+            }
+        }
+        return n * divisor;
+
+    }
+
+
 }
