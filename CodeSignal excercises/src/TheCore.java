@@ -44,30 +44,45 @@ public class TheCore {
      * For n = 2, the output should be
      * largestNumber(n) = 99.
      */
-   static int largestNumber(int n) {
-        double number=0;
+    static int largestNumber(int n) {
+        double number = 0;
         for (int i = 0; i < n; i++) {
-            number = number + ((Math.pow(10,i)) *9);
+            number = number + ((Math.pow(10, i)) * 9);
         }
         return (int) number;
     }
 
-/**
- n children have got m pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
+    /**
+     * n children have got m pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
+     * <p>
+     * Example
+     * <p>
+     * For n = 3 and m = 10, the output should be
+     * candies(n, m) = 9.
+     * <p>
+     * Each child will eat 3 pieces. So the answer is 9.
+     */
 
- Example
+    int candies(int n, int m) {
 
- For n = 3 and m = 10, the output should be
- candies(n, m) = 9.
-
- Each child will eat 3 pieces. So the answer is 9.
- */
-
-int candies(int n, int m) {
-
-    int candiesToEat=(m/n) *n;
+        int candiesToEat = (m / n) * n;
 
 
-return candiesToEat;
-}
+        return candiesToEat;
+    }
+
+    /**
+     * Your friend advised you to see a new performance in the most popular theater in the city. He knows a lot about art and his advice is usually good, but not this time: the performance turned out to be awfully dull. It's so bad you want to sneak out, which is quite simple, especially since the exit is located right behind your row to the left. All you need to do is climb over your seat and make your way to the exit.
+     * <p>
+     * The main problem is your shyness: you're afraid that you'll end up blocking the view (even if only for a couple of seconds) of all the people who sit behind you and in your column or the columns to your left. To gain some courage, you decide to calculate the number of such people and see if you can possibly make it to the exit without disturbing too many people.
+     * <p>
+     * Given the total number of rows and columns in the theater (nRows and nCols, respectively), and the row and column you're sitting in, return the number of people who sit strictly behind you and in your column or to the left, assuming all seats are occupied.
+     */
+
+    int seatsInTheater(int nCols, int nRows, int col, int row) {
+
+        int people = (nCols - col + 1) * (nRows - row);
+        return people;
+    }
+
 }
