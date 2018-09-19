@@ -104,15 +104,56 @@ public class TheCore {
         return n * divisor;
 
     }
-/**
- Consider integer numbers from 0 to n - 1 written down along the circle in such a way that the distance between any two neighboring numbers is equal (note that 0 and n - 1 are neighboring, too).
 
- Given n and firstNumber, find the number which is written in the radially opposite position to firstNumber.
- */
+    /**
+     * Consider integer numbers from 0 to n - 1 written down along the circle in such a way that the distance between any two neighboring numbers is equal (note that 0 and n - 1 are neighboring, too).
+     * <p>
+     * Given n and firstNumber, find the number which is written in the radially opposite position to firstNumber.
+     */
 
-int circleOfNumbers(int n, int firstNumber) {
-    int x = (n/2 + firstNumber)%n;
-    return x;
-}
+    int circleOfNumbers(int n, int firstNumber) {
+        int x = (n / 2 + firstNumber) % n;
+        return x;
+    }
+
+    /**
+     * One night you go for a ride on your motorcycle. At 00:00 you start your engine, and the built-in timer automatically begins counting the length of your ride, in minutes. Off you go to explore the neighborhood.
+     * <p>
+     * When you finally decide to head back, you realize there's a chance the bridges on your route home are up, leaving you stranded! Unfortunately, you don't have your watch on you and don't know what time it is. All you know thanks to the bike's timer is that n minutes have passed since 00:00.
+     * <p>
+     * Using the bike's timer, calculate the current time. Return an answer as the sum of digits that the digital timer in the format hh:mm would show.
+     */
+
+
+    int lateRide(int n) {
+
+        int h = n/60;
+        int minutes = n%60;
+        int sumHour = 0;
+        int sumMin = 0;
+
+
+        List<Integer> hour = new ArrayList<>();
+        while (h > 0) {
+            hour.add((int) (h % 10));
+            h = h / 10;
+        }
+        for (int i = 0; i < hour.size(); i++) {
+            sumHour = sumHour + hour.get(i);
+        }
+
+        List<Integer> min = new ArrayList<>();
+        while (minutes > 0) {
+            min.add((int) (minutes % 10));
+            minutes = minutes / 10;
+        }
+        for (int i = 0; i < min.size(); i++) {
+            sumMin = sumMin + min.get(i);
+        }
+
+        return sumHour + sumMin;
+
+    }
+
 
 }
