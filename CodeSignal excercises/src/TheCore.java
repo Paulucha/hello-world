@@ -197,4 +197,24 @@ public class TheCore {
         }
         return lista.toArray(new String[lista.size()]);
     }
+
+    /**
+     * Given two strings, find the number of common characters between them.
+     */
+
+    int commonCharacterCount(String s1, String s2) {
+        int count = 0;
+        String[] parts1 = s1.split("");
+
+
+        for (int i = 0; i < parts1.length; i++) {
+            if (s2.contains(parts1[i])) {
+
+                count = count + 1;
+            }
+            s2 =  s2.replaceFirst(parts1[i],".");
+        }
+        return count;
+    }
+
 }
