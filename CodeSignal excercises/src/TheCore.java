@@ -212,9 +212,38 @@ public class TheCore {
 
                 count = count + 1;
             }
-            s2 =  s2.replaceFirst(parts1[i],".");
+            s2 = s2.replaceFirst(parts1[i], ".");
         }
         return count;
     }
+
+    /**
+     * Ticket numbers usually consist of an even number of digits. A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.
+     * <p>
+     * Given a ticket number n, determine if it's lucky or not.
+     */
+
+    boolean isLucky(int n) {
+
+        ArrayList<Integer> lista = new ArrayList<>();
+        int sum1 = 0;
+        int sum2 = 0;
+        while (n > 0) {
+            lista.add(n % 10);
+            n = n / 10;
+        }
+        for (int i = 0; i < (lista.size() / 2); i++) {
+            sum1 = sum1 + lista.get(i);
+        }
+        for (int i = lista.size() / 2; i < lista.size(); i++) {
+            sum2 = sum2 + lista.get(i);
+
+        }
+        if (sum1 == sum2) {
+            return true;
+        } else return false;
+
+    }
+
 
 }
