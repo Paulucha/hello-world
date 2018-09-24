@@ -169,12 +169,32 @@ public class TheCore {
             return 0;
         }
         for (int i = 2; i <= 10; i++) {
-            if (s < min1 + min2_10 * (i-1)) {
+            if (s < min1 + min2_10 * (i - 1)) {
                 return i - 1;
             }
         }
         return 10 + (s - min1 - min2_10 * 9) / min11;
     }
 
+    /**
+     * Given an array of strings, return another array containing all of its longest strings.
+     */
 
+    static String[] allLongestStrings(String[] inputArray) {
+
+        ArrayList<String> lista = new ArrayList<>();
+        int max = 0;
+        for (String anInputArray : inputArray) {
+            if (anInputArray.length() > max) {
+                max = anInputArray.length();
+            }
+        }
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i].length() == max) {
+                lista.add(inputArray[i]);
+            }
+
+        }
+        return lista.toArray(new String[lista.size()]);
+    }
 }
