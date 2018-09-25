@@ -153,4 +153,61 @@ public class Intro {
         return sum;
     }
 
+
+//    int[] sortByHeight(int[] a) {
+//        int index1;
+//        int index2;
+//        int[] b = new int[1000];
+//        int currentMinvalue = -1;
+//        ArrayList<Integer> lista = new ArrayList<>();
+//        for (index2 = 1; index2 < a.length; index2++) {
+//            for (index = 1; index < a.length; index++) {
+//                if (a[index] < a[index - 1]) {
+//                    currentMinvalue = a[index - 1];
+//                    a[index - 1] = a[index];
+//                    a[index - 1] = currentMinvalue;
+//
+//                    //this is the tree
+//                }
+//            }
+//        }
+//        lista.sort();
+//
+//        if (a[index] == -1) {
+//            //this is the tree
+//        } else {
+//
+//
+//        }
+//
+//
+//    }
+//
+//}
+
+    int [] sortByHeight1(int[] a) {
+
+        ArrayList<Integer> lista = new ArrayList<>();
+        ArrayList<Integer> calaLista = new ArrayList<>();
+        ArrayList<Integer> listaWithTrees = new ArrayList<>();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != -1) {
+                lista.add(a[i]);
+                calaLista.add(a[i]);
+            } else calaLista.add(a[i]);
+        }
+        Collections.sort(lista);
+int count = 0;
+        for (int j = 0; j < calaLista.size(); j++) {
+            if (calaLista.get(j) == -1) {
+                listaWithTrees.add(calaLista.get(j));
+                count= count+1;
+            }
+            else listaWithTrees.add(lista.get(j-count));
+        }
+
+        int[] arr = listaWithTrees.stream().mapToInt(i -> i).toArray();
+        return arr;
+    }
 }
+
