@@ -245,65 +245,81 @@ public class TheCore {
 
     }
 
-/**
-You are playing an RPG game. Currently your experience points (XP) total is equal to experience. To reach the next level your XP should be at least at threshold. If you kill the monster in front of you, you will gain more experience points in the amount of the reward.
-
-Given values experience, threshold and reward, check if you reach the next level after killing the monster.
- */
+    /**
+     * You are playing an RPG game. Currently your experience points (XP) total is equal to experience. To reach the next level your XP should be at least at threshold. If you kill the monster in front of you, you will gain more experience points in the amount of the reward.
+     * <p>
+     * Given values experience, threshold and reward, check if you reach the next level after killing the monster.
+     */
 
     boolean reachNextLevel(int experience, int threshold, int reward) {
 
-        if (experience + reward >= threshold){
+        if (experience + reward >= threshold) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     /**
-    You found two items in a treasure chest! The first item weighs weight1 and is worth value1, and the second item weighs weight2 and is worth value2. What is the total maximum value of the items you can take with you, assuming that your max weight capacity is maxW and you can't come back for the items later?
-
-Note that there are only two items and you can't bring more than one item of each type, i.e. you can't take two first items or two second items.
+     * You found two items in a treasure chest! The first item weighs weight1 and is worth value1, and the second item weighs weight2 and is worth value2. What is the total maximum value of the items you can take with you, assuming that your max weight capacity is maxW and you can't come back for the items later?
+     * <p>
+     * Note that there are only two items and you can't bring more than one item of each type, i.e. you can't take two first items or two second items.
      */
 
     int knapsackLight(int value1, int weight1, int value2, int weight2, int maxW) {
 
-        if (weight1>= maxW && weight2<=maxW){
+        if (weight1 >= maxW && weight2 <= maxW) {
             return value2;
-        }
-        else if (weight2>=maxW && weight1 <= maxW){
+        } else if (weight2 >= maxW && weight1 <= maxW) {
             return value1;
-        }
-        else if (weight1 + weight2 <= maxW){
+        } else if (weight1 + weight2 <= maxW) {
             return value1 + value2;
-        }
-        else if (weight1 >= maxW && weight2 >= maxW){
+        } else if (weight1 >= maxW && weight2 >= maxW) {
             return 0;
-        }
-        else if (weight1 <= maxW && weight2 <= maxW){
-            if (value1 > value2){
+        } else if (weight1 <= maxW && weight2 <= maxW) {
+            if (value1 > value2) {
                 return value1;
-            }
-            else if (value2 > value1){
+            } else if (value2 > value1) {
                 return value2;
             }
         }
-           return value1;
+        return value1;
     }
 
-/**
-You're given three integers, a, b and c. It is guaranteed that two of these integers are equal to each other. What is the value of the third integer?
- */
+    /**
+     * You're given three integers, a, b and c. It is guaranteed that two of these integers are equal to each other. What is the value of the third integer?
+     */
 
     int extraNumber(int a, int b, int c) {
 
-        if (a==b) {
+        if (a == b) {
             return c;
         }
-        if (b==c){
+        if (b == c) {
             return a;
-        }
-       else
+        } else
             return b;
-        }
-
     }
+
+    int extraNumber2(int a, int b, int c) {
+        return a ^ b ^ c;
+    }
+
+    /**
+     * Given integers a and b, determine whether the following pseudocode results in an infinite loop
+     * <p>
+     * while a is not equal to b do
+     * increase a by 1
+     * decrease b by 1
+     * Assume that the program is executed on a virtual machine which can store arbitrary long numbers and execute forever.
+     */
+
+    boolean isInfiniteProcess(int a, int b) {
+
+        if (a > b) {
+            return true;
+        } else if ((b - a) % 2 == 0) {
+            return false;
+        } else return true;
+    }
+
+
+}
