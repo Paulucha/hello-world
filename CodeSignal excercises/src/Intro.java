@@ -216,8 +216,32 @@ int count = 0;
  Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
  */
 
-String reverseParentheses(String s) {
-return s;
+String reverseString(String s){
+    char[] try1 = s.toCharArray();
+    String r = "";
+    for (int i = try1.length-1; i>=0; i--)
+        r += Character.toString(try1[i]);
+
+    return r;
 }
+/**
+You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
+
+Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
+ */
+    String reverseParentheses(String s) {
+        int begin = 0;
+        int end = s.length() - 1;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == '(')
+                begin = i;
+            if(s.charAt(i) == ')'){
+                end = i;
+                String temp = s.substring(begin + 1, end);
+                return reverseParentheses(s.substring(0, begin) + reverseString(temp) + s.substring(end + 1));
+            }
+        }
+        return s;
+    }
 
 }
