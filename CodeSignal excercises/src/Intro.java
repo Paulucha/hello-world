@@ -264,4 +264,24 @@ public class Intro {
         int[] result = new int[]{sum2, sum1};
         return result;
     }
+    /**
+    Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+     */
+    static String[] addBorder(String[] picture) {
+
+        ArrayList<String> pic = new ArrayList<>();
+        int size = picture[0].length()+2;
+String frame = "";
+for (int i =0; i<size;i++){
+    frame= frame + "*";
+}
+        pic.add(frame);
+        for (int i =0; i<picture.length; i++){
+            pic.add("*" + picture[i] + "*");
+        }
+        pic.add(frame);
+        String[] myArray = pic.toArray(new String[pic.size()]);
+        return myArray;
+    }
+
 }
