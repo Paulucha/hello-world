@@ -185,7 +185,7 @@ public class Intro {
 //
 //}
 
-    int [] sortByHeight1(int[] a) {
+    int[] sortByHeight1(int[] a) {
 
         ArrayList<Integer> lista = new ArrayList<>();
         ArrayList<Integer> calaLista = new ArrayList<>();
@@ -197,45 +197,45 @@ public class Intro {
             } else calaLista.add(a[i]);
         }
         Collections.sort(lista);
-int count = 0;
+        int count = 0;
         for (int j = 0; j < calaLista.size(); j++) {
             if (calaLista.get(j) == -1) {
                 listaWithTrees.add(calaLista.get(j));
-                count= count+1;
-            }
-            else listaWithTrees.add(lista.get(j-count));
+                count = count + 1;
+            } else listaWithTrees.add(lista.get(j - count));
         }
 
         int[] arr = listaWithTrees.stream().mapToInt(i -> i).toArray();
         return arr;
     }
 
-/**
- You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
+    /**
+     * You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
+     * <p>
+     * Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
+     */
 
- Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
- */
+    String reverseString(String s) {
+        char[] try1 = s.toCharArray();
+        String r = "";
+        for (int i = try1.length - 1; i >= 0; i--)
+            r += Character.toString(try1[i]);
 
-String reverseString(String s){
-    char[] try1 = s.toCharArray();
-    String r = "";
-    for (int i = try1.length-1; i>=0; i--)
-        r += Character.toString(try1[i]);
+        return r;
+    }
 
-    return r;
-}
-/**
-You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
-
-Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
- */
+    /**
+     * You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
+     * <p>
+     * Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
+     */
     String reverseParentheses(String s) {
         int begin = 0;
         int end = s.length() - 1;
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) == '(')
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(')
                 begin = i;
-            if(s.charAt(i) == ')'){
+            if (s.charAt(i) == ')') {
                 end = i;
                 String temp = s.substring(begin + 1, end);
                 return reverseParentheses(s.substring(0, begin) + reverseString(temp) + s.substring(end + 1));
@@ -244,4 +244,24 @@ Your task is to reverse the strings contained in each pair of matching parenthes
         return s;
     }
 
+    /**
+     * Several people are standing in a row and need to be divided into two teams. The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, the fourth into team 2, and so on.
+     * <p>
+     * You are given an array of positive integers - the weights of the people. Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2 after the division is complete.
+     */
+
+
+    int[] alternatingSums(int[] a) {
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            if (i % 2 == 0) {
+                sum2 = sum2 + a[i];
+            } else sum1 = sum1 + a[i];
+        }
+
+        int[] result = new int[]{sum2, sum1};
+        return result;
+    }
 }
