@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Intro {
@@ -264,24 +265,50 @@ public class Intro {
         int[] result = new int[]{sum2, sum1};
         return result;
     }
+
     /**
-    Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+     * Given a rectangular matrix of characters, add a border of asterisks(*) to it.
      */
     static String[] addBorder(String[] picture) {
 
         ArrayList<String> pic = new ArrayList<>();
-        int size = picture[0].length()+2;
-String frame = "";
-for (int i =0; i<size;i++){
-    frame= frame + "*";
-}
+        int size = picture[0].length() + 2;
+        String frame = "";
+        for (int i = 0; i < size; i++) {
+            frame = frame + "*";
+        }
         pic.add(frame);
-        for (int i =0; i<picture.length; i++){
+        for (int i = 0; i < picture.length; i++) {
             pic.add("*" + picture[i] + "*");
         }
         pic.add(frame);
         String[] myArray = pic.toArray(new String[pic.size()]);
         return myArray;
     }
+
+    /**
+     * Two arrays are called similar if one can be obtained from another by swapping at most one pair of elements in one of the arrays.
+     * <p>
+     * Given two arrays a and b, check whether they are similar.
+     */
+
+    boolean areSimilar(int[] a, int[] b) {
+        if (Arrays.equals(a, b)) return true;
+        int count = 0;
+        ArrayList<Integer> lista = new ArrayList<>();
+        ArrayList<Integer> listb = new ArrayList<>();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                lista.add(a[i]);
+                listb.add(b[i]);
+
+            }
+        }
+        if ((lista.size()==2)&&(lista.get(0).equals(listb.get(1)))&&((lista.get(1).equals(listb.get(0))))) {
+            return true;
+        } else return false;
+//        Collections.swap(Collections.singletonList(a),1,2);
+    }
+
 
 }
