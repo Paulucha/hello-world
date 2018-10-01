@@ -304,10 +304,10 @@ public class Intro {
 
             }
         }
-        if ((lista.size()==2)&&(lista.get(0).equals(listb.get(1)))&&((lista.get(1).equals(listb.get(0))))) {
+        if ((lista.size() == 2) && (lista.get(0).equals(listb.get(1))) && ((lista.get(1).equals(listb.get(0))))) {
             return true;
         } else return false;
-//        Collections.swap(Collections.singletonList(a),1,2);
+
     }
 
 

@@ -1,0 +1,131 @@
+  /*
+1. Napisz metodę, która pobierze Stringa i zwróci Stringa zawierającego wszystkie litery, które nie występują w Stringu wejściowym.
+2. Pomijamy białem znaki i znaki specjalne.
+3. Bierzemy pod uwagę tylko małe znaki US-ASCII (a, b, c, d, ..., z)
+     */
+
+
+    /*
+1. Napisz metodę, która pobierze liczbę całkowitą (n) i zwróci n-ty element ciągu Fibonacciego (https://pl.wikipedia.org/wiki/Ciąg_Fibonacciego)
+2. Przetestuj metodę dla n = 0, 1, 2, 3, 5, 10 i 100
+     */
+
+    /*
+1. Stwórz interfejs User, który posiada pole name oraz metodę showInfo()
+2. Stwórz klasę Admin oraz Developer, które implementują interfejs User
+3. Metoda showInfo() powinna wyświetlać napis w formacie name – role, gdzie rola oznacza typ użytkownika (admin, dev)
+4. Stwórz obiekty obydwu typów
+5. Wywołaj metodę showInfo() dla każego z nich
+     */
+
+    /*
+1. Stwórz klasę generyczną
+2. Dodaj pole T item
+3. Dodaj konstruktor z parametrem T ustawiający to pole
+4. Dodaj metodę wypisującą typ elementu item (getClass())
+5. Stwórz 2 obiekty generyczne różnego typu
+6. Na każdym z obiektów wywołaj metodę z punktu 4)
+
+     */
+
+    /*
+1. rzeczytaj jak działa algorytm sortowania bąbelkowego (bubble sort)
+2. Stwórz metodę, które wykonuje sortowanie bąbelkowe na zadanej tablicy (int[])
+np. [3,6,5,2] → [2,3,5,6]
+3. Wyświetl zawartość tablicy podczas sortowanie (np. co każdą iterację)
+     */
+
+    /*
+1. Stwórz klasę Fraction, która ma 2 pola typu int: counter, denominator, oraz pole typu double: value
+2. Stwórz w tej klasie metodę, która wypisze na ekranie wartość oraz ułamek w postaci:
+value [counter/denominator]
+np. 0.5 [1/2]
+3. Stwórz kilka obiektów typu Fraction
+4. Wywołaj dla nich powyższą metodę
+     */
+
+     /*
+     1. Pobierz z konsoli liczbę całkowitą w postaci dziesiętnej
+     2. Wypisz podaną liczbę w postaci binarnej, tj.
+     5 = 101
+     3. Wypisz podaną liczbę w postaci szesnastkowej, tj.
+     47 = 2F
+*/
+
+/*
+1. Stwórz plik z danymi wejściowymi w postaci wyrazów oddzielonych przecinkami, np. input.txt:
+pies,kot,lew,gruszka,owoc
+2. Napisz program, który wczyta zawartość pliku do pamięci.
+Podpowiedź:
+```
+new Scanner( new File("poem.txt") );
+```
+3. Wypisz wyrazy posortowane rosnąco w nowych liniach, np.
+gruszka
+kot
+lew
+owoc
+pies
+*/
+
+/*
+1. Napisz program, który pobierze od użytkownika dwie tablice liczb, np.
+Podaj rozmiar tablicy 1: 4
+Podaj liczbe 1: 1
+Podaj liczbe 2: 4
+Podaj liczbe 3: 7
+Podaj liczbe 4: 0
+Podaj rozmiar tablicy 2: 2
+Podaj liczbe 1: 2
+Podaj liczbe 2: 0
+2. Napisz metodę, która połączy te dwie tablice w jedną, bez duplikatów, posortuje w malejącej kolejności i wyświetli na ekranie, np.:
+7 4 2 1 0
+*/
+
+/*
+1. Napisz program, który pobierze dwie liczby całkowite, nieujemne (a, b)
+2. Wypisz na ekran wszystkie wspólne dzielniki liczb a i b
+3. Może warto skorzystać z Algorytmu Euklidesa? https://pl.wikipedia.org/wiki/Algorytm_Euklidesa
+*/
+
+/*
+1. Zaimplementuj kolejkę (ang. queue), w której mogą być przechowywane dowolne obiekty.
+2. Implementacja kolejki powinna być zgodna z interfejsem Queue (Queue.java).
+3. Użyj generyków.
+```java
+public interface Queue<T> {
+    void enqueue(T o);
+    T dequeue();
+    int size();
+}
+```
+*/
+
+/*
+1. Zaimplementuj stos (ang. stack), w którym mogą być przechowywane dowolne obiekty.
+2. Implementacja stosu powinna być zgodna z interfejsem Stack (Stack.java).
+3. Użyj generyków.
+4. Jeśli stos jest pusy, metody peek() i pop() powinny zwracać IllegalStateException.
+```java
+public interface Stack<T> {
+    void push(T o);
+    T pop();
+    T peek();
+}
+```
+*/
+
+/*
+1. Zaimplementuj interfejs reprezentujący dowolnąd figurę geometryczną. Interfejs powinien deklarować dwie metody, które będą zwracać odpowiednio obwód i pole figury.
+2. Dodaj co  najmniej 3 implementacje interfejsu, np. prostokąt, trójkąt, koło.
+3. Stwórz metodę, która jako parametr przyjmie instancję interfejsu z punktu 1. i wyświetli na ekranie dane w postaci:
+```
+Trójkąt
+|---------|-----------|
+|  POLE   |   OBWÓD   |
+|---------|-----------|
+|  10.24  |   12.80   |
+|---------|-----------|
+```
+4. Pamiętaj, aby wartości wyświetlane na ekranie zaokrągląc zawsze do dwóch miejsc po przecinku (np. 6.67, 12.00)
+*/
