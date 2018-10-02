@@ -1,4 +1,4 @@
-package Other.user;
+package other.user;
 
 public class Main {
     public static void main(String[] args) {

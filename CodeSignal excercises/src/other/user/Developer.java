@@ -1,4 +1,4 @@
-package Other.user;
+package other.user;
 
 public class Developer implements User {
     @Override

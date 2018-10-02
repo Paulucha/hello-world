@@ -1,4 +1,4 @@
-package Other.user;
+package other.user;
 
 /**
  * 1. Stwórz interfejs User, który posiada pole name oraz metodę showInfo()

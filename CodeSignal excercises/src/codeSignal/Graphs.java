@@ -1,3 +1,5 @@
+package codeSignal;
+
 public class Graphs {
 
     boolean newRoadSystem(boolean[][] roadRegister) {
