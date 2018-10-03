@@ -43,7 +43,26 @@ public class solutions {
             reverse = reverse + s.charAt(i);
         }
         return reverse.equals(s);
+    }
 
+    /**
+     * 3.
+     * napisz program, który zamienia wartości dwóch liczb
+     * ▪ nie korzystaj z pomocniczej zmiennej
+     */
+
+    public static void changePlace(int a, int b) {
+        print(a, b);
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        print(a, b);
+    }
+
+    private static void print(int a, int b) {
+        System.out.println(a + " " + b);
     }
 
 }
