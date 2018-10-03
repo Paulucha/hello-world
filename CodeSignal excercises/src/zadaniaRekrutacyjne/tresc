@@ -1,0 +1,58 @@
+1.  prosty program, który sprawdzi, czy dana liczba
+(int) jest palindromem
+– dowolny sposób
+– pracuj tylko na typie int
+
+2.
+napisz prosty program, który sprawdzi, czy dany tekst
+(String) jest palindromem
+– dowolny sposób
+– nie korzystając z metody substring()
+
+3.
+napisz program, który zamienia wartości dwóch liczb
+▪ nie korzystaj z pomocniczej zmiennej
+
+4.
+zaimplementuj wzorzec singleton
+
+5.
+napisz program, który zwraca N-ty wyraz ciągu
+Fibonacciego
+
+6.
+napisz własną implementację ArrayList
+▪ klasa powinna posiadać odpowiednie metody
+– get(int index)
+– add(Object obj)
+– remove(int index)
+– size()
+
+7.
+metoda check(String, String), która sprawdza czy podane
+słowa są anagramami i zwraca wartość true/false
+np. check(“kanapka”, “pakanka”) → true
+– dodaj sprawdzenie czy w parametrze są tylko litery
+– dodaj rozróżnianie dużych/małych liter
+– dodaj możliwość wprowadzenia tablicy
+jako parametru
+– dodaj metodę getAnagrams(), która zwróci
+wszystkie możliwe anagramy dla zadanych
+parametrów
+– dodaj możliwość wczytania słów z pliku
+
+8.
+metoda add(String numbers), która dodaje do siebie liczby
+np. “1,2” zwróci 3
+– obsługa tylko 0-2 parametrów, zwraca sumę (0 dla
+pustego stringa)
+– dowolna ilość parametrów
+– znak nowej linii zamiast przecinka
+– parametryzowany znak delimitera
+– wyjątek dla liczby ujemnej
+– ignorowanie liczb większych niż 1000
+
+9.
+Implementacja stosu.
+https://javastart.pl/baza-wiedzy/darmowy-kurs-java/algorytmy/struktury-danych-stos
+http://strefakodera.pl/algorytmy/abstrakcyjne-struktury-danych/abstrakcyjne-struktury-danych-stos
