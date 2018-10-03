@@ -64,5 +64,22 @@ public class solutions {
     private static void print(int a, int b) {
         System.out.println(a + " " + b);
     }
+}
 
+/**
+ * 4.
+ * zaimplementuj wzorzec singleton
+ */
+class MySingleton {
+    private static MySingleton SINGLETON_INSTANCE;
+
+    private MySingleton() {
+    }
+
+    public synchronized static MySingleton getInstance() {
+        if (SINGLETON_INSTANCE == null) {
+            SINGLETON_INSTANCE = new MySingleton();
+        }
+        return SINGLETON_INSTANCE;
+    }
 }
