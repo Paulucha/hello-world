@@ -62,7 +62,7 @@ public class solutions {
     }
 
     private static void print(int a, int b) {
-        System.out.println(a + " " + b);
+    System.out.println(a + " " + b);
     }
 }
 
