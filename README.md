@@ -1,12 +1,11 @@
 This is my exercise repository. Here I add all the courses and exercises that I did for expand of my knowledge about java.
 
-##### Edit:
-Here I am practising my JAVA with **codesignal**.
+- Here I am practising my JAVA with **codesignal**.
 [This is my profile there: https://app.codesignal.com/profile/paulucha ](https://app.codesignal.com/profile/paulucha "/paulucha")
 
-and doing courses at Udemy platform. 
+- and doing courses at **Udemy** platform. 
 
-
+- and studying java following book **Head First Java.**
 
 
 ---
